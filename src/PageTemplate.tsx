@@ -16,6 +16,13 @@ const PageTemplate: React.FC<PageMetaData> = ({
         <title>{title}</title>
         <meta name="description" content={description} />
         {keywords && <meta name="keywords" content={keywords} />}
+        {schema && (
+          <script
+            type="application/ld+json"
+            className="rank-math-schema"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        )}
         
         {/* Open Graph / Social Media */}
         <meta property="og:type" content="website" />
